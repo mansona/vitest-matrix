@@ -1,6 +1,6 @@
 {
   "name": "vitest-matrix",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create a parallel GitHub matrix for Vitest",
   "keywords": [],
   "repository": "https://github.com/mansona/vitest-matrix",

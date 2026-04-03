@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-04-03)
+
+* vitest-matrix 0.1.0 (minor)
+
+#### :rocket: Enhancement
+* `vitest-matrix`
+  * [#4](https://github.com/mansona/vitest-matrix/pull/4) only output include object ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2026-02-18)
 
 * vitest-matrix 0.0.1 (patch)

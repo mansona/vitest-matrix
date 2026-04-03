@@ -9,22 +9,13 @@ describe("basic functionality", () => {
     const {stdout} = await execa({cwd: './fixtures'})`node ${binLocation}`;
     let parsedOutput;
     try { 
-
       parsedOutput = JSON.parse(stdout);
     } catch (err) {
       console.log(stdout);
       throw err;
     }
-    expect(parsedOutput.name).to.have.same.members([
-      "only-its.test.js",
-      "subfolder/thing.test.js",
-      "something.test.js - a basic test",
-      "something.test.js - another basic test",
-      "something.test.js - comes from the outside",
-      "something.test.js - has a friend",
-    ]);
 
-    expect(parsedOutput.include).to.have.same.deep.members([
+    expect(parsedOutput).to.have.same.deep.members([
       { name: "only-its.test.js", command: 'vitest only-its.test.js', },
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', },
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', },

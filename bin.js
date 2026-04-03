@@ -20,14 +20,10 @@ for (let entry of parsedOutput) {
 }
 
 
-const jsonOutput = {
-  name: [],
-  include: [],
-}
+const include = [];
 
 function pushoutput(name, command) {
-  jsonOutput.name.push(name),
-  jsonOutput.include.push({name, command})
+  include.push({name, command})
 }
 
 /**
@@ -49,4 +45,4 @@ for( let [file, tests] of Object.entries(testFiles)) {
   }
 }
 
-console.log(JSON.stringify(jsonOutput));
+console.log(JSON.stringify(include));

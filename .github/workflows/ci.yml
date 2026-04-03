@@ -32,20 +32,24 @@ jobs:
         run: echo "matrix=$(node ./bin.js)" >> $GITHUB_OUTPUT
 
   run-tests:
-    name: ${{ matrix.name }}
+    name: ${{ matrix.name }} - Node ${{matrix.node}}
     runs-on: ubuntu-latest
     needs: "matrix-job"
     timeout-minutes: 10
     strategy:
       fail-fast: false
-      matrix: ${{fromJson(needs.matrix-job.outputs.matrix)}}
+      matrix: 
+        node: 
+          - 22
+          - 24
+        include: ${{fromJson(needs.matrix-job.outputs.matrix)}}
 
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: ${{matrix.node}}
           cache: 'pnpm'    
       - run: pnpm install
       - run: pnpm ${{matrix.command}}

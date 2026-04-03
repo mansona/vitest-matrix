@@ -2,18 +2,21 @@
   "solution": {
     "vitest-matrix": {
       "impact": "minor",
-      "oldVersion": "0.0.1",
-      "newVersion": "0.1.0",
+      "oldVersion": "0.1.0",
+      "newVersion": "0.2.0",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
-    },
-    "vitest-fixture": {}
+    }
   },
-  "description": "## Release (2026-04-03)\n\n* vitest-matrix 0.1.0 (minor)\n\n#### :rocket: Enhancement\n* `vitest-matrix`\n  * [#4](https://github.com/mansona/vitest-matrix/pull/4) only output include object ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2026-04-03)\n\n* vitest-matrix 0.2.0 (minor)\n\n#### :rocket: Enhancement\n* `vitest-matrix`\n  * [#7](https://github.com/mansona/vitest-matrix/pull/7) add --node and --os options to command ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `vitest-matrix`\n  * [#9](https://github.com/mansona/vitest-matrix/pull/9) make sure test fixtures package is private ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }

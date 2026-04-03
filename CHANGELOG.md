@@ -2,6 +2,21 @@
 
 ## Release (2026-04-03)
 
+* vitest-matrix 0.2.0 (minor)
+
+#### :rocket: Enhancement
+* `vitest-matrix`
+  * [#7](https://github.com/mansona/vitest-matrix/pull/7) add --node and --os options to command ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `vitest-matrix`
+  * [#9](https://github.com/mansona/vitest-matrix/pull/9) make sure test fixtures package is private ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
+## Release (2026-04-03)
+
 * vitest-matrix 0.1.0 (minor)
 
 #### :rocket: Enhancement

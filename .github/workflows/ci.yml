@@ -29,10 +29,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
       - id: set-matrix
-        run: echo "matrix=$(node ./bin.js)" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(node ./bin.js) --commands-only" >> $GITHUB_OUTPUT
 
   run-tests:
-    name: ${{ matrix.name }} - Node ${{matrix.node}}
     runs-on: ubuntu-latest
     needs: "matrix-job"
     timeout-minutes: 10
@@ -42,7 +41,7 @@ jobs:
         node: 
           - 22
           - 24
-        include: ${{fromJson(needs.matrix-job.outputs.matrix)}}
+        command: ${{fromJson(needs.matrix-job.outputs.matrix)}}
 
     steps:
       - uses: actions/checkout@v4

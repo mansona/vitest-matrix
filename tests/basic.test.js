@@ -24,4 +24,17 @@ describe("basic functionality", () => {
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"' },
     ]);
   })
+
+  it('returns an array of commands when --commands-only is passed', async function() {
+    const {stdout} = await execa({cwd: './fixtures'})`node ${binLocation} --commands-only`;
+    let parsedOutput = JSON.parse(stdout);
+    expect(parsedOutput).to.have.same.deep.members([
+      "vitest only-its.test.js",
+      "vitest subfolder/thing.test.js",
+      "vitest something.test.js --testNamePattern \"a basic test\"",
+      "vitest something.test.js --testNamePattern \"another basic test\"",
+      "vitest something.test.js --testNamePattern \"comes from the outside\"",
+      "vitest something.test.js --testNamePattern \"has a friend\""
+    ]);
+  })
 })

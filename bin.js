@@ -45,4 +45,8 @@ for( let [file, tests] of Object.entries(testFiles)) {
   }
 }
 
-console.log(JSON.stringify(include));
+if (process.argv.includes('--commands-only')) {
+  console.log(JSON.stringify(include.map(item => item.command)));
+} else {
+  console.log(JSON.stringify(include));
+}

@@ -2,6 +2,18 @@
 import { execa } from 'execa';
 import { relative } from 'node:path'
 
+import { program } from 'commander';
+
+program
+  .name('vitest-matrix')
+  .option('--node <versions...>', 'add node versions to the output matrix')
+  .option('--os <os...>',  'add os entries to the output matix')
+  .option('-p, --pretty', 'pretty print the output - useful for debugging')
+
+program.parse();
+
+const options = program.opts();
+
 const { stdout } = await execa`npx vitest list --json`;
 
 const parsedOutput = JSON.parse(stdout);
@@ -20,7 +32,7 @@ for (let entry of parsedOutput) {
 }
 
 
-const include = [];
+let include = [];
 
 function pushoutput(name, command) {
   include.push({name, command})
@@ -45,4 +57,38 @@ for( let [file, tests] of Object.entries(testFiles)) {
   }
 }
 
-console.log(JSON.stringify(include));
+if (options.node) {
+  let newInclude = [];
+
+  for(let nodeVersion of options.node) {
+    for(let entry of include) {
+      newInclude.push({
+        ...entry,
+        node: nodeVersion,
+      })
+    }
+  }
+
+  include = newInclude;
+}
+
+if (options.os) {
+  let newInclude = [];
+
+  for(let os of options.os) {
+    for(let entry of include) {
+      newInclude.push({
+        ...entry,
+        os,
+      })
+    }
+  }
+
+  include = newInclude;
+}
+
+if (options.pretty) {
+  console.log(JSON.stringify(include, null, 2));
+} else {
+  console.log(JSON.stringify(include));
+}

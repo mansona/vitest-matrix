@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "commander": "^15.0.0-0",
     "execa": "^9.6.0"
   },
   "devDependencies": {

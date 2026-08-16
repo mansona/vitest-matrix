@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2026-08-16)
+
+* vitest-matrix 0.2.1 (patch)
+
+#### :bug: Bug Fix
+* `vitest-matrix`
+  * [#10](https://github.com/mansona/vitest-matrix/pull/10) escape test names properly ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `vitest-matrix`
+  * [#11](https://github.com/mansona/vitest-matrix/pull/11) update release-plan ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2026-04-03)
 
 * vitest-matrix 0.2.0 (minor)

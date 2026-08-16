@@ -1,14 +1,14 @@
 {
   "solution": {
     "vitest-matrix": {
-      "impact": "minor",
-      "oldVersion": "0.1.0",
-      "newVersion": "0.2.0",
+      "impact": "patch",
+      "oldVersion": "0.2.0",
+      "newVersion": "0.2.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         },
         {
           "impact": "patch",
@@ -18,5 +18,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-04-03)\n\n* vitest-matrix 0.2.0 (minor)\n\n#### :rocket: Enhancement\n* `vitest-matrix`\n  * [#7](https://github.com/mansona/vitest-matrix/pull/7) add --node and --os options to command ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `vitest-matrix`\n  * [#9](https://github.com/mansona/vitest-matrix/pull/9) make sure test fixtures package is private ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2026-08-16)\n\n* vitest-matrix 0.2.1 (patch)\n\n#### :bug: Bug Fix\n* `vitest-matrix`\n  * [#10](https://github.com/mansona/vitest-matrix/pull/10) escape test names properly ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `vitest-matrix`\n  * [#11](https://github.com/mansona/vitest-matrix/pull/11) update release-plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }

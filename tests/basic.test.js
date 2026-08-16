@@ -20,6 +20,10 @@ describe("basic functionality", () => {
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', },
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', },
       { name: "something.test.js - another basic test", command: 'vitest something.test.js --testNamePattern "another basic test"', },
+      {
+        name: "something.test.js - Is a thing (with some other stuff): and another one",
+        command: 'vitest something.test.js --testNamePattern "Is a thing \\(with some other stuff\\): and another one"',
+      },
       { name: "something.test.js - comes from the outside", command: 'vitest something.test.js --testNamePattern "comes from the outside"', },
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"' },
     ]);
@@ -40,12 +44,22 @@ describe("basic functionality", () => {
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', node: "22"},
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', node: "22"},
       { name: "something.test.js - another basic test", command: 'vitest something.test.js --testNamePattern "another basic test"', node: "22"},
+      {
+        name: "something.test.js - Is a thing (with some other stuff): and another one",
+        command: 'vitest something.test.js --testNamePattern "Is a thing \\(with some other stuff\\): and another one"',
+        node: "22"
+      },
       { name: "something.test.js - comes from the outside", command: 'vitest something.test.js --testNamePattern "comes from the outside"', node: "22"},
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"', node: "22"},
       { name: "only-its.test.js", command: 'vitest only-its.test.js', node: "24"},
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', node: "24"},
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', node: "24"},
       { name: "something.test.js - another basic test", command: 'vitest something.test.js --testNamePattern "another basic test"', node: "24"},
+      {
+        name: "something.test.js - Is a thing (with some other stuff): and another one",
+        command: 'vitest something.test.js --testNamePattern "Is a thing \\(with some other stuff\\): and another one"',
+        node: "24"
+      },
       { name: "something.test.js - comes from the outside", command: 'vitest something.test.js --testNamePattern "comes from the outside"', node: "24"},
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"', node: "24"},
     ]);
@@ -66,24 +80,48 @@ describe("basic functionality", () => {
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', node: "22", os: "ubuntu-latest"},
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', node: "22", os: "ubuntu-latest"},
       { name: "something.test.js - another basic test", command: 'vitest something.test.js --testNamePattern "another basic test"', node: "22", os: "ubuntu-latest"},
+      {
+        name: "something.test.js - Is a thing (with some other stuff): and another one",
+        command: 'vitest something.test.js --testNamePattern "Is a thing \\(with some other stuff\\): and another one"',
+        node: "22",
+        os: "ubuntu-latest"
+      },
       { name: "something.test.js - comes from the outside", command: 'vitest something.test.js --testNamePattern "comes from the outside"', node: "22", os: "ubuntu-latest"},
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"', node: "22", os: "ubuntu-latest"},
       { name: "only-its.test.js", command: 'vitest only-its.test.js', node: "24", os: "ubuntu-latest"},
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', node: "24", os: "ubuntu-latest"},
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', node: "24", os: "ubuntu-latest"},
       { name: "something.test.js - another basic test", command: 'vitest something.test.js --testNamePattern "another basic test"', node: "24", os: "ubuntu-latest"},
+      {
+        name: "something.test.js - Is a thing (with some other stuff): and another one",
+        command: 'vitest something.test.js --testNamePattern "Is a thing \\(with some other stuff\\): and another one"',
+        node: "24",
+        os: "ubuntu-latest"
+      },
       { name: "something.test.js - comes from the outside", command: 'vitest something.test.js --testNamePattern "comes from the outside"', node: "24", os: "ubuntu-latest"},
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"', node: "24", os: "ubuntu-latest"},
       { name: "only-its.test.js", command: 'vitest only-its.test.js', node: "22", os: "windows-latest"},
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', node: "22", os: "windows-latest"},
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', node: "22", os: "windows-latest"},
       { name: "something.test.js - another basic test", command: 'vitest something.test.js --testNamePattern "another basic test"', node: "22", os: "windows-latest"},
+      {
+        name: "something.test.js - Is a thing (with some other stuff): and another one",
+        command: 'vitest something.test.js --testNamePattern "Is a thing \\(with some other stuff\\): and another one"',
+        node: "22",
+        os: "windows-latest"
+      },
       { name: "something.test.js - comes from the outside", command: 'vitest something.test.js --testNamePattern "comes from the outside"', node: "22", os: "windows-latest"},
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"', node: "22", os: "windows-latest"},
       { name: "only-its.test.js", command: 'vitest only-its.test.js', node: "24", os: "windows-latest"},
       { name: "subfolder/thing.test.js", command: 'vitest subfolder/thing.test.js', node: "24", os: "windows-latest"},
       { name: "something.test.js - a basic test", command: 'vitest something.test.js --testNamePattern "a basic test"', node: "24", os: "windows-latest"},
       { name: "something.test.js - another basic test", command: 'vitest something.test.js --testNamePattern "another basic test"', node: "24", os: "windows-latest"},
+      {
+        name: "something.test.js - Is a thing (with some other stuff): and another one",
+        command: 'vitest something.test.js --testNamePattern "Is a thing \\(with some other stuff\\): and another one"',
+        node: "24",
+        os: "windows-latest"
+      },
       { name: "something.test.js - comes from the outside", command: 'vitest something.test.js --testNamePattern "comes from the outside"', node: "24", os: "windows-latest"},
       { name: "something.test.js - has a friend", command: 'vitest something.test.js --testNamePattern "has a friend"', node: "24", os: "windows-latest"},
     ]);

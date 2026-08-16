@@ -4,6 +4,8 @@ import { relative } from 'node:path'
 
 import { program } from 'commander';
 
+import escapeStringRegexp from 'escape-string-regexp';
+
 program
   .name('vitest-matrix')
   .option('--node <versions...>', 'add node versions to the output matrix')
@@ -50,7 +52,7 @@ for( let [file, tests] of Object.entries(testFiles)) {
     }
 
     for( let testFilter of testSet) {
-      pushoutput(`${file} - ${testFilter}`, `vitest ${file} --testNamePattern "${testFilter}"`)
+      pushoutput(`${file} - ${testFilter}`, `vitest ${file} --testNamePattern "${escapeStringRegexp(testFilter)}"`)
     }
   } else {
     pushoutput(`${file}`, `vitest ${file}`)

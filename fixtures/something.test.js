@@ -18,6 +18,10 @@ describe('another basic test', function() {
   it("could be real", () => {})
 })
 
+describe('Is a thing (with some other stuff): and another one', function() {
+  it("will work with escaping")
+})
+
 it("comes from the outside", function() {
   
 })
